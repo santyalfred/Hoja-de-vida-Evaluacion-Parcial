@@ -1,37 +1,28 @@
-/* =========================================================================
-   Hoja de Vida — Santiago Alfred Michovich
-   CSS3 nativo — colores, tipografía, márgenes/padding, bordes, sombras,
-   Flexbox (sección Habilidades Técnicas), CSS Grid (sección Proyectos
-   Destacados) y diseño responsive con @media query.
-   ========================================================================= */
 
-/* --------------------------- Variables de diseño -------------------------- */
 :root {
-  --color-navy: #1b2a4a;
-  --color-navy-dark: #0f1b2d;
-  --color-pitch: #3d8361;
-  --color-pitch-dark: #2b5f45;
-  --color-gold: #c9a227;
-  --color-bg: #f7f8fa;
-  --color-bg-card: #ffffff;
-  --color-text: #1c2430;
-  --color-text-soft: #4b5566;
-  --color-border: #dfe3e9;
+  --color_bg: #ffffff;
+  --color_bg_alt: #f4f4f4;
+  --color_bg_tarjeta: #ffffff;
+  --color_texto: #1a1a1a;
+  --color_texto_suave: #545454;
+  --color_borde: #e2e2e2;
 
-  --font-titulos: Georgia, 'Times New Roman', serif;
-  --font-cuerpo: 'Segoe UI', Arial, Helvetica, sans-serif;
+  --color_primario: #d6001c;   
+  --color_primario_oscuro: #a40016;
+  --color_acento: #111111;     
 
-  --radio-borde: 8px;
-  --sombra-suave: 0 2px 6px rgba(15, 27, 45, 0.12);
-  --sombra-media: 0 4px 14px rgba(15, 27, 45, 0.18);
+  --fuente_titulos: Georgia, 'Times New Roman', serif;
+  --fuente_cuerpo: 'Segoe UI', Arial, Helvetica, sans-serif;
+
+  --radio_borde: 8px;
+  --sombra_suave: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --sombra_media: 0 4px 14px rgba(0, 0, 0, 0.16);
+  --color_error_bg: #fdecec;
+
+  --transicion_tema: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
-/* =========================================================================
-   MODO OSCURO — CSS3 nativo, sin JavaScript.
-   Usa la media query prefers-color-scheme: si el sistema operativo o el
-   navegador del visitante está configurado en modo oscuro, estos colores
-   se aplican automáticamente. No requiere ningún botón ni script.
-   ========================================================================= */
+/* MODO OSCURO */
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
@@ -78,13 +69,7 @@
   }
 }
 
-/* =========================================================================
-   BOTÓN DE MODO OSCURO — CSS3 puro, sin JavaScript.
-   Técnica: un <input type="checkbox"> oculto + un <label> que actúa como
-   botón. Al hacer clic en el label, se marca el checkbox, y con el
-   selector :has() (soportado en navegadores modernos) se le aplican los
-   mismos colores oscuros de arriba a todo el <body>.
-   ========================================================================= */
+/* BOTÓN DE MODO OSCURO */
 
 /* Ocultar visualmente el checkbox mantenerlo accesible por teclado */
 .modo-oscuro-input {
@@ -167,7 +152,7 @@ body:has(.modo-oscuro-input:checked) .modo-oscuro-boton {
   color: #ffffff;
 }
 
-/* ------------------------------ Reset básico ------------------------------ */
+/*  Reset básico */
 * {
   box-sizing: border-box;
 }
@@ -213,7 +198,7 @@ select:focus-visible {
   outline-offset: 2px;
 }
 
-/* --------------------------------- Tipografía ------------------------------ */
+/*  Tipografía */
 h1, h2, h3 {
   font-family: var(--font-titulos);
   color: var(--color-navy-dark);
@@ -263,7 +248,7 @@ blockquote {
   box-shadow: var(--sombra-suave);
 }
 
-/* ---------------------------------- Header --------------------------------- */
+/*  Header  */
 header {
   background: linear-gradient(150deg, var(--color-navy-dark) 0%, var(--color-navy) 70%);
   color: #ffffff;
@@ -312,7 +297,7 @@ nav a:focus {
   border-bottom-color: var(--color-gold);
 }
 
-/* ----------------------------------- Main ---------------------------------- */
+/*  Main  */
 main {
   max-width: 960px;
   margin: 0 auto;
@@ -329,7 +314,7 @@ hr {
   margin: 0;
 }
 
-/* --------------------------- Presentación / address ------------------------ */
+/*  Presentación  */
 figure {
   margin: 0 0 1.5rem;
   text-align: center;
@@ -362,7 +347,7 @@ address .dato {
   margin-bottom: 0.4em;
 }
 
-/* ------------------------------ Listas (fortalezas) ------------------------ */
+/*  Listas (fortalezas) */
 #perfil ul {
   list-style: none;
   display: flex;
@@ -380,7 +365,7 @@ address .dato {
   font-size: 0.85rem;
 }
 
-/* --------------------------- Tarjetas (formación / experiencia) ------------ */
+/* Tarjetas */
 article {
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
@@ -441,7 +426,7 @@ meter {
   height: 0.8em;
 }
 
-/* --------------------------------- Tabla idiomas ---------------------------- */
+/* Tabla idiomas*/
 table {
   width: 100%;
   border-collapse: collapse;
@@ -485,7 +470,7 @@ tbody tr:nth-child(even) td {
   background-color: var(--color-bg);
 }
 
-/* --------------------- Proyectos Destacados — CSS GRID ---------------------- */
+/* CSS GRID  */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -498,7 +483,7 @@ tbody tr:nth-child(even) td {
   flex-direction: column;
 }
 
-/* -------------------------------- Multimedia -------------------------------- */
+/* Multimedia */
 #multimedia figure {
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
@@ -518,7 +503,7 @@ audio, video {
   margin-bottom: 1.5rem;
 }
 
-/* ---------------------------------- Formulario ------------------------------ */
+/*  Formulario */
 form {
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
@@ -604,7 +589,7 @@ button[type="reset"]:hover {
   color: var(--color-text);
 }
 
-/* ----------------------------------- Footer --------------------------------- */
+/*  Footer */
 footer {
   background-color: var(--color-navy-dark);
   color: #aeb8c9;
@@ -617,11 +602,7 @@ footer a {
   color: var(--color-gold);
 }
 
-/* ============================================================================
-   DISEÑO RESPONSIVE — @media query
-   Por debajo de 700px: la navegación, el flexbox de habilidades y el grid de
-   proyectos pasan a una sola columna para verse bien en celulares.
-   ============================================================================ */
+/* DISEÑO RESPONSIVE  */
 @media (max-width: 700px) {
 
   header {
