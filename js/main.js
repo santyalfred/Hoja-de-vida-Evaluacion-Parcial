@@ -34,9 +34,18 @@ function inicializar_tema() {
   } else if (tema_guardado === 'claro') {
     aplicar_tema(false);
   } else {
-    /* 2. Si no hay preferencia guardada, seguir la del sistema operativo */
+    /* Si no hay preferencia guardada, seguir la del sistema operativo */
     const prefiere_oscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
     aplicar_tema(prefiere_oscuro);
   }
+
+  /* Alternar el tema al hacer clic en el botón, y guardar la preferencia */
+  boton_tema.addEventListener('click', function () {
+    const esta_oscuro_ahora = html.classList.contains('tema_oscuro');
+    const nuevo_estado_oscuro = !esta_oscuro_ahora;
+
+    aplicar_tema(nuevo_estado_oscuro);
+    localStorage.setItem(CLAVE_ALMACENAMIENTO, nuevo_estado_oscuro ? 'oscuro' : 'claro');
+  });
 }
 
