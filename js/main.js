@@ -169,5 +169,15 @@ function inicializar_validacion_formulario() {
     });
     select_motivo.classList.remove('campo_invalido');
   });
-  
+
+  /* El botón para limpiar formulario que igual limpia los mensajes de error */
+  formulario.addEventListener('reset', function () {
+    Object.keys(campos).forEach(function (clave) {
+      campos[clave].elemento.classList.remove('campo_invalido');
+      campos[clave].error.textContent = '';
+    });
+    select_motivo.classList.remove('campo_invalido');
+    estado_formulario.textContent = '';
+    estado_formulario.className = '';
+  });
 }
