@@ -25,5 +25,18 @@ function inicializar_tema() {
       boton_tema.setAttribute('aria-pressed', 'false');
     }
   }
+
+   /* Revisar si el usuario ya eligió un tema anteriormente */
+  const tema_guardado = localStorage.getItem(CLAVE_ALMACENAMIENTO);
+
+  if (tema_guardado === 'oscuro') {
+    aplicar_tema(true);
+  } else if (tema_guardado === 'claro') {
+    aplicar_tema(false);
+  } else {
+    /* 2. Si no hay preferencia guardada, seguir la del sistema operativo */
+    const prefiere_oscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    aplicar_tema(prefiere_oscuro);
+  }
 }
 
