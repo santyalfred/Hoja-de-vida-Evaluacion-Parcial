@@ -180,4 +180,5 @@ function inicializar_validacion_formulario() {
     estado_formulario.textContent = '';
     estado_formulario.className = '';
   });
+  
 }
