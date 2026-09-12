@@ -125,4 +125,49 @@ function inicializar_validacion_formulario() {
     });
   });
 
+    /* Validar también el select y el checkbox */
+  const select_motivo = document.getElementById('motivo');
+  const checkbox_aceptacion = document.getElementById('aceptacion');
+
+  /* Validar todo el formulario al enviarlo */
+  formulario.addEventListener('submit', function (evento) {
+    evento.preventDefault();
+
+    let formulario_valido = true;
+
+    Object.keys(campos).forEach(function (clave) {
+      const campo_valido = validar_campo(clave);
+      if (!campo_valido) formulario_valido = false;
+    });
+
+    if (select_motivo.value === '') {
+      formulario_valido = false;
+      select_motivo.classList.add('campo_invalido');
+    } else {
+      select_motivo.classList.remove('campo_invalido');
+    }
+
+    if (!checkbox_aceptacion.checked) {
+      formulario_valido = false;
+    }
+
+    if (!formulario_valido) {
+      estado_formulario.textContent = 'Por favor corrige los campos marcados antes de enviar.';
+      estado_formulario.className = 'error';
+      return;
+    }
+
+    /* Como esta página no tiene servidor backend, se simula el envío */
+    estado_formulario.textContent = '¡Mensaje enviado correctamente! Gracias por escribirme, ' +
+      campos.nombre.elemento.value.trim() + '.';
+    estado_formulario.className = 'exito';
+
+    formulario.reset();
+    Object.keys(campos).forEach(function (clave) {
+      campos[clave].elemento.classList.remove('campo_invalido');
+      campos[clave].error.textContent = '';
+    });
+    select_motivo.classList.remove('campo_invalido');
+  });
+  
 }
