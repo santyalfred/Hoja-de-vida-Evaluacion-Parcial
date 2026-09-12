@@ -49,3 +49,11 @@ function inicializar_tema() {
   });
 }
 
+/* Validación del formulario de contacto */
+function inicializar_validacion_formulario() {
+  const formulario = document.getElementById('form_contacto');
+  if (!formulario) return;
+
+  const estado_formulario = document.getElementById('form_estado');
+  
+}
