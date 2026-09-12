@@ -101,5 +101,21 @@ function inicializar_validacion_formulario() {
       }
     }
   };
+
+  /* Validar un campo individual para luego mostrar/ocultar su mensaje de error */
+  function validar_campo(clave) {
+    const campo = campos[clave];
+    const mensaje_error = campo.validar(campo.elemento.value);
+
+    if (mensaje_error) {
+      campo.elemento.classList.add('campo_invalido');
+      campo.error.textContent = mensaje_error;
+      return false;
+    }
+
+    campo.elemento.classList.remove('campo_invalido');
+    campo.error.textContent = '';
+    return true;
+  }
   
 }
