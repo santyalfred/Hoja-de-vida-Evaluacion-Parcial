@@ -55,5 +55,51 @@ function inicializar_validacion_formulario() {
   if (!formulario) return;
 
   const estado_formulario = document.getElementById('form_estado');
+
+  const campos = {
+    nombre: {
+      elemento: document.getElementById('nombre'),
+      error: document.getElementById('error_nombre'),
+      validar: function (valor) {
+        if (valor.trim().length < 3) {
+          return 'El nombre debe tener al menos 3 caracteres.';
+        }
+        return '';
+      }
+    },
+    correo: {
+      elemento: document.getElementById('correo'),
+      error: document.getElementById('error_correo'),
+      validar: function (valor) {
+        const patron_correo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!patron_correo.test(valor.trim())) {
+          return 'Ingresa un correo electrónico válido (ejemplo@dominio.com).';
+        }
+        return '';
+      }
+    },
+    telefono: {
+      elemento: document.getElementById('telefono'),
+      error: document.getElementById('error_telefono'),
+      validar: function (valor) {
+        if (valor.trim() === '') return ''; /* el teléfono es opcional */
+        const patron_telefono = /^\+?[0-9]{7,15}$/;
+        if (!patron_telefono.test(valor.trim())) {
+          return 'Ingresa un teléfono válido (7 a 15 dígitos, puede iniciar con +).';
+        }
+        return '';
+      }
+    },
+    mensaje: {
+      elemento: document.getElementById('mensaje'),
+      error: document.getElementById('error_mensaje'),
+      validar: function (valor) {
+        if (valor.trim().length < 10) {
+          return 'El mensaje debe tener al menos 10 caracteres.';
+        }
+        return '';
+      }
+    }
+  };
   
 }
