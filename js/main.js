@@ -11,4 +11,19 @@ function inicializar_tema() {
   const texto_tema = document.getElementById('theme_toggle_text');
 
   const CLAVE_ALMACENAMIENTO = 'santiago_cv_tema';
+
+  function aplicar_tema(es_oscuro) {
+    if (es_oscuro) {
+      html.classList.add('tema_oscuro');
+      icono_tema.textContent = '☀️';
+      texto_tema.textContent = 'Modo claro';
+      boton_tema.setAttribute('aria-pressed', 'true');
+    } else {
+      html.classList.remove('tema_oscuro');
+      icono_tema.textContent = '🌙';
+      texto_tema.textContent = 'Modo oscuro';
+      boton_tema.setAttribute('aria-pressed', 'false');
+    }
+  }
 }
+
