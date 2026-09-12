@@ -25,17 +25,22 @@
 /* MODO OSCURO */
 @media (prefers-color-scheme: dark) {
   :root {
-    color-scheme: dark;
+    --color_bg: #0b1e3d;
+  --color_bg_alt: #142a4d;
+  --color_bg_tarjeta: #142a4d;
+  --color_texto: #f2f2f2;
+  --color_texto_suave: #c7d1e0;
+  --color_borde: #24406b;
 
-    --color-bg: #10151d;
-    --color-bg-card: #1a2230;
-    --color-text: #e8ecf1;
-    --color-text-soft: #a9b2c2;
-    --color-border: #2d3648;
+  --color_primario: #a50044;   
+  --color_primario_oscuro: #7a0033;
+  --color_acento: #edbb00;    
 
-    --sombra-suave: 0 2px 6px rgba(0, 0, 0, 0.4);
-    --sombra-media: 0 4px 14px rgba(0, 0, 0, 0.55);
-  }
+  --sombra_suave: 0 2px 6px rgba(0, 0, 0, 0.45);
+  --sombra_media: 0 4px 16px rgba(0, 0, 0, 0.6);
+  --color_error_bg: #3a1420;
+}
+
 
   mark {
     background-color: #7a6111;
