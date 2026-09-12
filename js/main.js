@@ -117,5 +117,12 @@ function inicializar_validacion_formulario() {
     campo.error.textContent = '';
     return true;
   }
-  
+
+  /* Validar en tiempo real, mientras el usuario escribe*/
+  Object.keys(campos).forEach(function (clave) {
+    campos[clave].elemento.addEventListener('input', function () {
+      validar_campo(clave);
+    });
+  });
+
 }
