@@ -300,31 +300,34 @@
   </section>
 
 
-  <section id="contacto" aria-labelledby="contacto-titulo">
-    <h2 id="contacto-titulo">Contacto</h2>
+  <section id="contacto" aria-labelledby="contacto_titulo">
+    <h2 id="contacto_titulo">Contacto</h2>
     <p>Completa el siguiente formulario y me pondré en contacto a la brevedad.</p>
 
-    <form action="#" method="post">
+    <form id="form_contacto" novalidate>
       <fieldset>
         <legend>Datos de contacto</legend>
 
-        <p>
-          <label for="nombre">Nombre completo (*):</label><br>
+        <div class="campo">
+          <label for="nombre">Nombre completo (*):</label>
           <input type="text" id="nombre" name="nombre" minlength="3" maxlength="80" required aria-required="true">
-        </p>
+          <p class="mensaje_error" id="error_nombre" role="alert"></p>
+        </div>
 
-        <p>
-          <label for="correo">Correo electrónico (*):</label><br>
+        <div class="campo">
+          <label for="correo">Correo electrónico (*):</label>
           <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required aria-required="true">
-        </p>
+          <p class="mensaje_error" id="error_correo" role="alert"></p>
+        </div>
 
-        <p>
-          <label for="telefono">Teléfono:</label><br>
+        <div class="campo">
+          <label for="telefono">Teléfono:</label>
           <input type="tel" id="telefono" name="telefono" placeholder="+591 70000000" pattern="^\+?[0-9]{7,15}$">
-        </p>
+          <p class="mensaje_error" id="error_telefono" role="alert"></p>
+        </div>
 
-        <p>
-          <label for="motivo">Motivo de contacto (*):</label><br>
+        <div class="campo">
+          <label for="motivo">Motivo de contacto (*):</label>
           <select id="motivo" name="motivo" required aria-required="true">
             <option value="">-- Selecciona una opción --</option>
             <option value="oferta-laboral">Oferta laboral / práctica</option>
@@ -332,29 +335,31 @@
             <option value="consulta-academica">Consulta académica</option>
             <option value="otro">Otro</option>
           </select>
-        </p>
+        </div>
 
-        <p>
-          <label for="mensaje">Mensaje (*):</label><br>
+        <div class="campo">
+          <label for="mensaje">Mensaje (*):</label>
           <textarea id="mensaje" name="mensaje" rows="5" minlength="10" maxlength="1000" required aria-required="true"></textarea>
-        </p>
+          <p class="mensaje_error" id="error_mensaje" role="alert"></p>
+        </div>
 
-        <p>
+        <div class="campo campo_checkbox">
           <input type="checkbox" id="aceptacion" name="aceptacion" value="si" required aria-required="true">
           <label for="aceptacion">Acepto que mis datos sean utilizados únicamente para fines de contacto (*).</label>
-        </p>
+        </div>
       </fieldset>
 
-      <p>
+      <p id="form_estado" role="status" aria-live="polite"></p>
+
+      <div class="acciones_form">
         <button type="submit">Enviar mensaje</button>
         <button type="reset">Limpiar formulario</button>
-      </p>
+      </div>
     </form>
   </section>
 
-</main>
 
-<hr>
+</main>
 
 <footer>
   <p>Santiago Alfred Michovich - Ingeniería de Sistemas - Universidad Católica Boliviana (UCB)</p>
