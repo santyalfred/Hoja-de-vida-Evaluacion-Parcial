@@ -84,9 +84,3 @@ de tema no requiere duplicar estilos.
 3. Abre `index.html` con doble clic o "Abrir con" tu navegador. No requiere
    servidor ni instalación de paquetes.
 
-## Entrega
-1. Comprime toda la carpeta como `michovich-santiago-cv.zip` y súbela a Moodle.
-2. Adjunta el enlace público del repositorio de GitHub.
-3. Adjunta el enlace del sitio desplegado en GitHub Pages.
-4. Agrega un comentario breve en Moodle describiendo las funcionalidades
-   implementadas (modo claro/oscuro y validación de formulario en JavaScript).
