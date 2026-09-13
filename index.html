@@ -9,32 +9,35 @@
 </head>
 <body>
 
-<a href="#inicio">Saltar al contenido principal</a>
+<a class="skip_link" href="#contenido_principal">Saltar al contenido principal</a>
 
-<header>
-  <input type="checkbox" id="modo-oscuro" class="modo-oscuro-input">
-  <label for="modo-oscuro" class="modo-oscuro-boton">🌙 Modo oscuro</label>
+<header class="site_header">
+  <div class="header_inner">
+    <div class="header_texto">
+      <h1>Santiago Alfred Michovich</h1>
+      <p class="rol">Estudiante de Ingeniería de Sistemas | La Paz, Bolivia</p>
+    </div>
 
-  <h1>Santiago Alfred Michovich</h1>
-  <p>Estudiante de Ingeniería de Sistemas | La Paz - Bolivia</p>
+    <button id="theme_toggle" type="button" class="theme_toggle_btn" aria-pressed="false">
+      <span id="theme_toggle_icon" aria-hidden="true">🌙</span>
+      <span id="theme_toggle_text">Modo oscuro</span>
+    </button>
+  </div>
 
-  <nav aria-label="Navegación principal">
+  <nav class="nav_principal" aria-label="Navegación principal">
     <ul>
       <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#perfil">Perfil Profesional</a></li>
-      <li><a href="#formacion">Formación Académica</a></li>
+      <li><a href="#perfil">Perfil</a></li>
+      <li><a href="#formacion">Formación</a></li>
       <li><a href="#experiencia">Experiencia</a></li>
-      <li><a href="#habilidades">Habilidades Técnicas</a></li>
-      <li><a href="#certificaciones">Certificaciones</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
       <li><a href="#idiomas">Idiomas</a></li>
-      <li><a href="#proyectos">Proyectos Destacados</a></li>
-      <li><a href="#multimedia">Multimedia</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#enlaces">Enlaces</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
 </header>
-
-<hr>
 
 <main id="inicio">
 
